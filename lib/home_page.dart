@@ -41,7 +41,38 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  
+                  const Spacer(),
+                  IconButton(
+                    icon: Icon(Icons.logout, color: Colors.black),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder:
+                            (context) => AlertDialog(
+                              title: Text('Logout'),
+                              content: Text('Apakah Anda yakin ingin keluar?'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  child: Text('Batal'),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => LoginPage(),
+                                      ),
+                                    );
+                                  },
+                                  child: Text('Ya'),
+                                ),
+                              ],
+                            ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
