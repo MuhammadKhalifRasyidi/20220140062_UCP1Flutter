@@ -116,8 +116,39 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-              ]
-            )   
+                Expanded(
+                  child: Card(
+                    color: Colors.greenAccent,
+                    margin: EdgeInsets.symmetric(horizontal: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DataPelanggan(),
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          children: const [
+                            Icon(Icons.settings, size: 40, color: Colors.green),
+                            SizedBox(height: 8),
+                            Text("Data Pelanggan"),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            
           ],
         ),
       ),
