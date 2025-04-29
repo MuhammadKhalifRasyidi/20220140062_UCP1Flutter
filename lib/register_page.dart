@@ -97,12 +97,19 @@ class _RegisterPageState extends State<RegisterPage> {
                               border: OutlineInputBorder(),
                               prefixIcon: Icon(Icons.phone),
                             ),
-                          )
-                        ]
-                      )
-                    )
-                  ]
-                )
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'No HP tidak boleh kosong';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                
               ],
             ),
           ),
