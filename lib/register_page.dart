@@ -37,7 +37,20 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 Image.asset('assets/images/kambing.png', height: 120),
                 Text('DAFTAR AKUN BARU'),
-                
+                const SizedBox(height: 50),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Nama Lengkap'),
+                ),
+                const SizedBox(height: 10),
+                TextFormField(
+                  controller: namaController,
+                  decoration: const InputDecoration(
+                    labelText: 'Nama Lengkap',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.person),
+                  ),
+                )
               ],
             ),
           ),
