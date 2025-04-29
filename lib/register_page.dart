@@ -50,7 +50,14 @@ class _RegisterPageState extends State<RegisterPage> {
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.person),
                   ),
-                )
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Nama lengkap tidak boleh kosong';
+                    }
+                    return null;
+                  },
+                ),
+                
               ],
             ),
           ),
