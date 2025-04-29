@@ -32,7 +32,9 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               
+                Image.asset('assets/images/kambing.png', height: 120),
+                Text('SELAMAT DATANG KEMBALI'),
+                
               ],
             ),
           ),
