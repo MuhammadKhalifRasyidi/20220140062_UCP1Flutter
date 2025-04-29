@@ -224,7 +224,34 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   child: Text('Daftar'),
                 ),
-                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Sudah memiliki akun? Silahkan ',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      child: Text(
+                        'Login disini!',
+                        style: TextStyle(fontSize: 14),
+                      ),
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        minimumSize: Size(0, 0),
+                        tapTargetSize:
+                            MaterialTapTargetSize
+                                .shrinkWrap, 
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
