@@ -103,7 +103,36 @@ class _LoginPageState extends State<LoginPage> {
                   },
                   child: Text('Masuk'),
                 ),
-                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Belum punya akun? Silahkan ', style: TextStyle(fontSize: 14)),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RegisterPage(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Daftar disini!',
+                        style: TextStyle(fontSize: 14),
+                      ),
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero, 
+                        minimumSize: Size(
+                          0,
+                          0,
+                        ), 
+                        tapTargetSize:
+                            MaterialTapTargetSize
+                                .shrinkWrap, // memperkecil area klik
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
