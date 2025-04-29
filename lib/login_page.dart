@@ -51,7 +51,17 @@ class _LoginPageState extends State<LoginPage> {
                     return null;
                   },
                 ),
-                
+                const SizedBox(height: 25),
+                Align(alignment: Alignment.centerLeft, child: Text('Password')),
+                const SizedBox(height: 10),
+                TextFormField(
+                  controller: passwordController,
+                  obscureText: _obscurePassword,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    border: OutlineInputBorder(),
+                  )
+                )
               ],
             ),
           ),
