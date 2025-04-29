@@ -34,7 +34,17 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Image.asset('assets/images/kambing.png', height: 120),
                 Text('SELAMAT DATANG KEMBALI'),
-                
+                const SizedBox(height: 50),
+                Align(alignment: Alignment.centerLeft, child: Text('Email')),
+                const SizedBox(height: 10),
+                TextFormField(
+                  controller: emailController,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.email),
+                  ),
+                )
               ],
             ),
           ),
