@@ -57,7 +57,26 @@ class _RegisterPageState extends State<RegisterPage> {
                     return null;
                   },
                 ),
-                
+                const SizedBox(height: 25),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Email'),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            controller: emailController,
+                            decoration: const InputDecoration(
+                              labelText: 'Email',
+                              border: OutlineInputBorder(),
+                              prefixIcon: Icon(Icons.email),
+                            ),
+                          )
+                        ]
+                      )
+                    )
               ],
             ),
           ),
