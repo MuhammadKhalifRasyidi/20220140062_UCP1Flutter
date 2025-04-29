@@ -85,6 +85,8 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.only(top: 16.0),
         child: Column(
           children: [
+            Image.asset('assets/images/iklan.jpg', width: 380),
+            const SizedBox(height: 50),
            
           ],
         ),
