@@ -83,9 +83,26 @@ class _RegisterPageState extends State<RegisterPage> {
                         ],
                       ),
                     ),
+                    SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('No HP'),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            controller: noHpController,
+                            decoration: const InputDecoration(
+                              labelText: 'No HP',
+                              border: OutlineInputBorder(),
+                              prefixIcon: Icon(Icons.phone),
+                            ),
+                          )
+                        ]
+                      )
+                    )
                   ]
                 )
-                    
               ],
             ),
           ),
