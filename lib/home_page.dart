@@ -87,7 +87,37 @@ class _HomePageState extends State<HomePage> {
           children: [
             Image.asset('assets/images/iklan.jpg', width: 380),
             const SizedBox(height: 50),
-           
+            Row(
+              children: [
+                Expanded(
+                  child: Card(
+                    color: Colors.greenAccent,
+                    margin: EdgeInsets.symmetric(horizontal: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DataPiket()),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          children: const [
+                            Icon(Icons.person, size: 40, color: Colors.green),
+                            SizedBox(height: 8),
+                            Text("Data Piket"),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ]
+            )   
           ],
         ),
       ),
