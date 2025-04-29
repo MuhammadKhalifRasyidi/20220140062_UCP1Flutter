@@ -22,7 +22,18 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: false,
         title: Column(
           children: [
-           
+            Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage('assets/images/kambing.png'),
+                  ),
+                  
+                ],
+              ),
+            ),
           ],
         ),
       ),
