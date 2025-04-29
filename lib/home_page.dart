@@ -30,6 +30,17 @@ class _HomePageState extends State<HomePage> {
                     radius: 40,
                     backgroundImage: AssetImage('assets/images/kambing.png'),
                   ),
+                  const SizedBox(width: 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Selamat Datang', style: TextStyle(fontSize: 16)),
+                      Text(
+                        'Admin',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                   
                 ],
               ),
