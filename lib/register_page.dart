@@ -73,10 +73,19 @@ class _RegisterPageState extends State<RegisterPage> {
                               border: OutlineInputBorder(),
                               prefixIcon: Icon(Icons.email),
                             ),
-                          )
-                        ]
-                      )
-                    )
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Email tidak boleh kosong';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ]
+                )
+                    
               ],
             ),
           ),
