@@ -148,7 +148,34 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
 
-            
+            const SizedBox(height: 20),
+            SizedBox(
+              width: 395,
+              child: Card(
+                color: Colors.greenAccent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Barang()),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: const [
+                        Icon(Icons.settings, size: 40, color: Colors.green),
+                        SizedBox(height: 8),
+                        Text("Barang Masuk Keluar"),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
