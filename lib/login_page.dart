@@ -103,6 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   },
                   child: Text('Masuk'),
                 ),
+                SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

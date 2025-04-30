@@ -34,7 +34,6 @@ class DetailPiket extends StatelessWidget {
             ? DateFormat('EEEE, dd MMMM yyyy', 'id_ID').format(parsedDate)
             : 'Tanggal tidak tersedia';
 
-    // Ambil tugas pertama sebagai judul
     String tugasPertama = tugasList.isNotEmpty ? tugasList[0].split(' - ').first : 'Tugas Tidak Ditemukan';
 
     return Scaffold(
@@ -55,7 +54,6 @@ class DetailPiket extends StatelessWidget {
           children: [
             Row(
               children: [
-                // Tanggal
                 Expanded(
                   child: Text(
                     formattedDate,

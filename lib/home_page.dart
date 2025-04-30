@@ -150,7 +150,7 @@ class _HomePageState extends State<HomePage> {
 
             const SizedBox(height: 20),
             SizedBox(
-              width: 395,
+              width: 393,
               child: Card(
                 color: Colors.greenAccent,
                 shape: RoundedRectangleBorder(

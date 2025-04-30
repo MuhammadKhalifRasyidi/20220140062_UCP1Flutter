@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ucp1flutter/home_page.dart';
 
 class DetailPelanggan extends StatefulWidget {
-  const DetailPelanggan({super.key});
+  final String namaCust;
+
+  const DetailPelanggan({super.key, required this.namaCust});
 
   @override
   State<DetailPelanggan> createState() => _DetailPelangganState();
@@ -19,10 +21,8 @@ class _DetailPelangganState extends State<DetailPelanggan> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
-        title: Text(
-          'Detail ', // $tugasPertama Menambahkan judul berdasarkan tugas
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+        title: Text('Detail ${widget.namaCust}',
+         style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
         leading: BackButton(color: Colors.white),
       ),
@@ -33,7 +33,7 @@ class _DetailPelangganState extends State<DetailPelanggan> {
             key: _formKey,
             child: Column(
               children: [
-                Image.asset('assets/images/kambing.png', height: 120),
+                const Icon(Icons.person, color: Colors.black, size: 100),
                 Text('SELAMAT DATANG KEMBALI'),
                 const SizedBox(height: 25),
                 Align(alignment: Alignment.centerLeft, child: Text('Alamat')),
@@ -118,9 +118,7 @@ class _DetailPelangganState extends State<DetailPelanggan> {
                     if (_formKey.currentState!.validate()) {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => HomePage(),
-                        ),
+                        MaterialPageRoute(builder: (context) => HomePage()),
                       );
                     }
                   },

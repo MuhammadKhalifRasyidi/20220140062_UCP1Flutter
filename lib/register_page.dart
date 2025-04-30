@@ -14,7 +14,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController noHpController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   bool _obscurePassword = true;
 
@@ -205,9 +206,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           confirmPasswordController.text) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text(
-                              'Password tidak sama',
-                            ),
+                            content: Text('Password tidak sama'),
                             backgroundColor: Colors.red,
                           ),
                         );
@@ -224,6 +223,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   child: Text('Daftar'),
                 ),
+                SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -245,9 +245,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                         minimumSize: Size(0, 0),
-                        tapTargetSize:
-                            MaterialTapTargetSize
-                                .shrinkWrap, 
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                     ),
                   ],

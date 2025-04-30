@@ -180,14 +180,17 @@ class _DataPelangganState extends State<DataPelanggan> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  foregroundColor: Colors.black
+                  foregroundColor: Colors.black,
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DetailPelanggan(),
+                        builder:
+                            (context) => DetailPelanggan(
+                              namaCust: namaCustController.text,
+                            ),
                       ),
                     );
                   }
