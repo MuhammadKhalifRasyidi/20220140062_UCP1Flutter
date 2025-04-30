@@ -20,13 +20,27 @@ class _DetailPelangganState extends State<DetailPelanggan> {
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
         title: Text(
-          'Detail ', 
+          'Detail ', // $tugasPertama Menambahkan judul berdasarkan tugas
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         leading: BackButton(color: Colors.white),
       ),
-      
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Center(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                Image.asset('assets/images/kambing.png', height: 120),
+                Text('SELAMAT DATANG KEMBALI'),
+                
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
