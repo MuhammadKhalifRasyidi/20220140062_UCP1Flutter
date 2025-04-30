@@ -38,6 +38,16 @@ class DetailPiket extends StatelessWidget {
     String tugasPertama = tugasList.isNotEmpty ? tugasList[0].split(' - ').first : 'Tugas Tidak Ditemukan';
 
     return Scaffold(
+      backgroundColor: Color(0xFFFEF6F4),
+      appBar: AppBar(
+        backgroundColor: Colors.greenAccent,
+        title: Text(
+          'Detail $tugasPertama', // Menambahkan judul berdasarkan tugas
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        leading: BackButton(color: Colors.white),
+      ),
       
     );
   }
