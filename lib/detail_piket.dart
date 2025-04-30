@@ -83,9 +83,46 @@ class DetailPiket extends StatelessWidget {
                 ),
               ],
             ),
-          ]
-        )
-      )
+            SizedBox(height: 20),
+            // Daftar tugas dalam Card
+            Expanded(
+              child: tugasList.isEmpty
+                  ? Center(child: Text("Tidak ada tugas"))
+                  : ListView.builder(
+                      itemCount: tugasList.length,
+                      itemBuilder: (context, index) {
+                        final tugas = tugasList[index].split(' - ').first;
+                        return SizedBox(
+                          height: 65,
+                          child: Card(
+                            elevation: 3,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    tugas,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.justify, // Justify the text
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
