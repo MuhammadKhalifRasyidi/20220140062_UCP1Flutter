@@ -158,15 +158,40 @@ class _DataPiketState extends State<DataPiket> {
                               padding: const EdgeInsets.symmetric(
                                 vertical: 6.0,
                               ),
-
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 16.0),
-                                  child: Text(
-                                    daftarTugas[index].split(' - ').first,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder:
+                                          (context) => DetailPiket(
+                                            nama: namaController.text,
+                                            tugasList: [daftarTugas[index]],
+                                          ),
+                                    ),
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  foregroundColor: Colors.black,
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 14,
+                                  ),
+                                  elevation: 2,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    side: BorderSide(color: Colors.greenAccent),
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 16.0),
+                                    child: Text(
+                                      daftarTugas[index].split(' - ').first,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ),
