@@ -168,8 +168,34 @@ class _BarangState extends State<Barang> {
                       ],
                     ),
                   ),
-                ]
-              )
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Harga Satuan'),
+                        const SizedBox(height: 10),
+                        TextFormField(
+                          controller: hargaSatuanController,
+                          readOnly: true,
+                          decoration: const InputDecoration(
+                            labelText: 'Harga Satuan',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.money),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Harga Satuan tidak boleh kosong';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              
             ],
           ),
         ),
