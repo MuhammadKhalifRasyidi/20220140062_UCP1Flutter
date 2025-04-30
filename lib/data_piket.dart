@@ -101,6 +101,28 @@ class _DataPiketState extends State<DataPiket> {
                   return null;
                 },
               ),
+              const SizedBox(height: 20),
+              Text("Tugas Piket"),
+              const SizedBox(height: 6),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: tugasController,
+                      decoration: InputDecoration(
+                        hintText: 'Tugas Piket',
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Tugas Piket tidak boleh kosong';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                ]
+              )
             ],
           ),
         ),
