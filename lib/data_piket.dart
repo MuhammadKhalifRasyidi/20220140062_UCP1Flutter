@@ -94,6 +94,12 @@ class _DataPiketState extends State<DataPiket> {
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.calendar_today),
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Tanggal tidak boleh kosong';
+                  }
+                  return null;
+                },
               ),
             ],
           ),
