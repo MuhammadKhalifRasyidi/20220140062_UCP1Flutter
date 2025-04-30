@@ -195,7 +195,44 @@ class _BarangState extends State<Barang> {
                   ),
                 ],
               ),
-              
+              const SizedBox(height: 50),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent,
+                  minimumSize: const Size(900, 60),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  foregroundColor: Colors.black,
+                ),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    final jumlah = int.tryParse(jumlahController.text) ?? 0;
+                    final hargaRaw = hargaSatuanPerBarang[jenisBarangController.text] ?? '0';
+                    final hargaSatuan = int.parse(hargaRaw);
+                    final totalHarga = hargaSatuan * jumlah;
+
+                    final formatter = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp. ', decimalDigits: 0);
+
+                    final Map<String, String> transaksi = {
+                      'tanggal': tanggalController.text,
+                      'jenisTransaksi': jenisTransaksiController.text,
+                      'jenisBarang': jenisBarangController.text,
+                      'jumlah': jumlahController.text,
+                      'hargaSatuan': formatter.format(hargaSatuan),
+                      'totalHarga': formatter.format(totalHarga),
+                    };
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HasilTransaksi(transaksi: transaksi),
+                      ),
+                    );
+                  }
+                },
+                child: const Text('Submit'),
+              ),
             ],
           ),
         ),
