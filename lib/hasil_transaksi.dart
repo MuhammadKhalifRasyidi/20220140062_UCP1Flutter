@@ -45,11 +45,67 @@ class _HasilTransaksiState extends State<HasilTransaksi> {
                 'Data Berhasil Disimpan',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-            ]
-      
+              const SizedBox(height: 50),
+
+              _buildRow('Tanggal', formattedDate),
+              const Divider(),
+
+              _buildRow(
+                'Jenis Transaksi',
+                widget.transaksi['jenisTransaksi'] ?? '-',
+              ),
+              const Divider(),
+
+              _buildRow('Jenis Barang', widget.transaksi['jenisBarang'] ?? '-'),
+              const Divider(),
+
+              _buildRow('Jumlah Barang', widget.transaksi['jumlah'] ?? '-'),
+              const Divider(),
+
+              _buildRow('Harga Satuan', widget.transaksi['hargaSatuan'] ?? '-'),
+              const Divider(),
+
+              _buildRow('Total Harga', widget.transaksi['totalHarga'] ?? '-'),
+              const Divider(),
+
+              const SizedBox(height: 50),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent,
+                  minimumSize: const Size(900, 60),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  foregroundColor: Colors.black,
+                ),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePage()),
+                  );
+                },
+                child: const Text('Simpan'),
+              ),
+            ],
           ),
+        ),
       ),
-      )
+    );
+  }
+
+  Widget _buildRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text(
+            value,
+            style: const TextStyle(fontSize: 16, color: Colors.black54),
+          ),
+        ],
+      ),
     );
   }
 }
