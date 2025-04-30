@@ -121,8 +121,85 @@ class _DataPiketState extends State<DataPiket> {
                       },
                     ),
                   ),
-                ]
-              )
+                  const SizedBox(width: 12),
+                  ElevatedButton(
+                    onPressed: _tambahTugas,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.greenAccent,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 18,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Text("Tambah"),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 24),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'Daftar Tugas Piket',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Expanded(
+                child:
+                    daftarTugas.isEmpty
+                        ? Center(child: Text("Belum ada Data"))
+                        : ListView.builder(
+                          itemCount: daftarTugas.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 6.0,
+                              ),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder:
+                                          (context) => DetailPiket(
+                                            nama: namaController.text,
+                                            tugasList: [daftarTugas[index]],
+                                          ),
+                                    ),
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  foregroundColor: Colors.black,
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 14,
+                                  ),
+                                  elevation: 2,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    side: BorderSide(color: Colors.greenAccent),
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 16.0),
+                                    child: Text(
+                                      daftarTugas[index].split(' - ').first,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+              ),
             ],
           ),
         ),
