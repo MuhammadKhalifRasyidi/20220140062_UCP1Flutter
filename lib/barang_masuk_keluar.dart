@@ -108,7 +108,40 @@ class _BarangState extends State<Barang> {
                   return null;
                 },
               ),
-             
+              const SizedBox(height: 20),
+              DropdownButtonFormField<String>(
+                value: jenisBarangController.text.isEmpty ? null : jenisBarangController.text,
+                decoration: const InputDecoration(
+                  labelText: 'Jenis Barang',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.category),
+                ),
+                items: hargaSatuanPerBarang.keys.map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (value) {
+                  setState(() {
+                    jenisBarangController.text = value!;
+                    final harga = hargaSatuanPerBarang[value];
+                    final formatter = NumberFormat.currency(
+                      locale: 'id_ID',
+                      symbol: 'Rp. ',
+                      decimalDigits: 0,
+                    );
+                    hargaSatuanController.text = formatter.format(int.parse(harga!));
+                  });
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Jenis Barang tidak boleh kosong';
+                  }
+                  return null;
+                },
+              ),
+              
             ],
           ),
         ),
