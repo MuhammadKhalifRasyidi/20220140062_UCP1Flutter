@@ -172,6 +172,28 @@ class _DataPelangganState extends State<DataPelanggan> {
                   ),
                 ],
               ),
+              SizedBox(height: 50),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent,
+                  minimumSize: Size(900, 60),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  foregroundColor: Colors.black
+                ),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPelanggan(),
+                      ),
+                    );
+                  }
+                },
+                child: Text('Simpan'),
+              ),
               
             ],
           ),
