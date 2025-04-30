@@ -58,7 +58,23 @@ class _DataPiketState extends State<DataPiket> {
         centerTitle: true,
         leading: BackButton(color: Colors.white),
       ),
-      
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Nama Anggota"),
+              const SizedBox(height: 6),
+              TextFormField(
+                controller: namaController,
+                decoration: InputDecoration(border: OutlineInputBorder()),
+              )
+            ]
+          )
+        )
+      ),
     );
   }
 }
