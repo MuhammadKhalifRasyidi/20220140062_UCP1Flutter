@@ -70,7 +70,13 @@ class _DataPiketState extends State<DataPiket> {
               TextFormField(
                 controller: namaController,
                 decoration: InputDecoration(border: OutlineInputBorder()),
-              )
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Nama Anggota tidak boleh kosong';
+                  }
+                  return null;
+                },
+              ),
             ]
           )
         )
