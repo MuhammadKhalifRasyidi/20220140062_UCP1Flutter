@@ -77,8 +77,102 @@ class _DataPelangganState extends State<DataPelanggan> {
                       ],
                     ),
                   ),
-                ]
-              )
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('No HP'),
+                        SizedBox(height: 10),
+                        TextFormField(
+                          controller: noHpCustController,
+                          decoration: const InputDecoration(
+                            labelText: 'No HP',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.phone),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'No HP tidak boleh kosong';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 25),
+              Align(alignment: Alignment.centerLeft, child: Text('Alamat')),
+              const SizedBox(height: 10),
+              TextFormField(
+                controller: alamatController,
+                decoration: const InputDecoration(
+                  labelText: 'Alamat',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.person),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Alamat tidak boleh kosong';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 25),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Provinsi'),
+                        SizedBox(height: 10),
+                        TextFormField(
+                          controller: provinsiController,
+                          decoration: const InputDecoration(
+                            labelText: 'Provinsi',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.email),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Provinsi tidak boleh kosong';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Kode Pos'),
+                        SizedBox(height: 10),
+                        TextFormField(
+                          controller: kodePosController,
+                          decoration: const InputDecoration(
+                            labelText: 'Kode Pos',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.phone),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Kode Pos tidak boleh kosong';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              
             ],
           ),
         ),
