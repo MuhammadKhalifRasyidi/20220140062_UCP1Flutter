@@ -10,6 +10,12 @@ class DetailPiket extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Ambil tanggal dari tugas pertama jika ada
+    String? tanggalTugas;
+    if (tugasList.isNotEmpty) {
+      final parts = tugasList[0].split(' - ');
+      if (parts.length > 1) tanggalTugas = parts[1];
+    }
     return Scaffold(
       
     );
