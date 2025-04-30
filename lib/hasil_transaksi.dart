@@ -14,7 +14,25 @@ class HasilTransaksi extends StatefulWidget {
 class _HasilTransaksiState extends State<HasilTransaksi> {
   @override
   Widget build(BuildContext context) {
-    
+    String tanggalTransaksi = widget.transaksi['tanggal'] ?? '';
+    DateTime? parsedDate;
+
+    if (tanggalTransaksi.isNotEmpty) {
+      final split = tanggalTransaksi.split('-');
+      if (split.length == 3) {
+        parsedDate = DateTime(
+          int.parse(split[2]),
+          int.parse(split[1]),
+          int.parse(split[0]),
+        );
+      }
+    }
+
+    String formattedDate =
+        parsedDate != null
+            ? DateFormat('EEEE, dd MMMM yyyy', 'id_ID').format(parsedDate)
+            : 'Tanggal tidak tersedia';
+
     return Scaffold(
       body: Center(
         child: Padding(
@@ -27,14 +45,11 @@ class _HasilTransaksiState extends State<HasilTransaksi> {
                 'Data Berhasil Disimpan',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-             
-            
-            ],
+            ]
+      
           ),
-        ),
       ),
+      )
     );
   }
-
-  
 }
