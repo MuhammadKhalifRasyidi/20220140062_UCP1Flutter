@@ -82,6 +82,32 @@ class _BarangState extends State<Barang> {
                   return null;
                 },
               ),
+              const SizedBox(height: 20),
+              DropdownButtonFormField<String>(
+                value: jenisTransaksiController.text.isEmpty ? null : jenisTransaksiController.text,
+                decoration: const InputDecoration(
+                  labelText: 'Jenis Transaksi',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.swap_horiz),
+                ),
+                items: ['Barang Masuk', 'Barang Keluar'].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (value) {
+                  setState(() {
+                    jenisTransaksiController.text = value!;
+                  });
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Jenis Transaksi tidak boleh kosong';
+                  }
+                  return null;
+                },
+              ),
              
             ],
           ),
