@@ -51,6 +51,13 @@ class _DataPiketState extends State<DataPiket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFEF6F4),
+      appBar: AppBar(
+        backgroundColor: Colors.greenAccent,
+        title: Text('Piket Gudang', style: TextStyle(fontWeight: FontWeight.bold),),
+        centerTitle: true,
+        leading: BackButton(color: Colors.white),
+      ),
       
     );
   }
