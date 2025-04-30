@@ -12,6 +12,7 @@ class _DataPiketState extends State<DataPiket> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController namaController = TextEditingController();
   final TextEditingController tugasController = TextEditingController();
+  final TextEditingController tanggalController = TextEditingController();
   DateTime? selectedDate;
   final List<String> daftarTugas = [];
 
@@ -26,6 +27,7 @@ class _DataPiketState extends State<DataPiket> {
     if (date != null) {
       setState(() {
         selectedDate = date;
+        tanggalController.text = '${date.day}-${date.month}-${date.year}';
       });
     }
   }
@@ -54,7 +56,10 @@ class _DataPiketState extends State<DataPiket> {
       backgroundColor: Color(0xFFFEF6F4),
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
-        title: Text('Piket Gudang', style: TextStyle(fontWeight: FontWeight.bold),),
+        title: Text(
+          'Piket Gudang',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         leading: BackButton(color: Colors.white),
       ),
@@ -77,9 +82,22 @@ class _DataPiketState extends State<DataPiket> {
                   return null;
                 },
               ),
-            ]
-          )
-        )
+              const SizedBox(height: 20),
+              Text("Pilih Tanggal"),
+              const SizedBox(height: 6),
+              TextFormField(
+                controller: tanggalController,
+                readOnly: true,
+                onTap: _pilihTanggal,
+                decoration: InputDecoration(
+                  hintText: 'Pilih Tanggal',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.calendar_today),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
