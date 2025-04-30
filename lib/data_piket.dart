@@ -30,7 +30,23 @@ class _DataPiketState extends State<DataPiket> {
     }
   }
 
-  
+  void _tambahTugas() {
+    if (_formKey.currentState!.validate()) {
+      if (selectedDate == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Silakan pilih tanggal terlebih dahulu")),
+        );
+        return;
+      }
+
+      final tugas =
+          "${tugasController.text} - ${selectedDate!.day}-${selectedDate!.month}-${selectedDate!.year}";
+      setState(() {
+        daftarTugas.add(tugas);
+        tugasController.clear();
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
