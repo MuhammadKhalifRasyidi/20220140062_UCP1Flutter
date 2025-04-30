@@ -48,7 +48,44 @@ class DetailPiket extends StatelessWidget {
         centerTitle: true,
         leading: BackButton(color: Colors.white),
       ),
-      
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                // Tanggal
+                Expanded(
+                  child: Text(
+                    formattedDate,
+                    style: TextStyle(fontSize: 16, color: Colors.black54),
+                  ),
+                ),
+                Card(
+                  color: Colors.greenAccent.shade100,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 8,
+                    ),
+                    child: Text(
+                      nama,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ]
+        )
+      )
     );
   }
 }
