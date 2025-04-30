@@ -15,7 +15,21 @@ class _DataPiketState extends State<DataPiket> {
   DateTime? selectedDate;
   final List<String> daftarTugas = [];
 
-  
+  void _pilihTanggal() async {
+    DateTime? date = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2100),
+    );
+
+    if (date != null) {
+      setState(() {
+        selectedDate = date;
+      });
+    }
+  }
+
   
 
   @override
