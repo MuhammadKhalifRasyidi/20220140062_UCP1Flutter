@@ -51,7 +51,34 @@ class _DataPelangganState extends State<DataPelanggan> {
                   return null;
                 },
               ),
-              
+              const SizedBox(height: 25),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Email'),
+                        SizedBox(height: 10),
+                        TextFormField(
+                          controller: emailCustController,
+                          decoration: const InputDecoration(
+                            labelText: 'Email',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.email),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Email tidak boleh kosong';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ]
+              )
             ],
           ),
         ),
