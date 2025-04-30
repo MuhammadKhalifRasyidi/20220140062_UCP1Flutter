@@ -194,7 +194,26 @@ class _DataPelangganState extends State<DataPelanggan> {
                 },
                 child: Text('Simpan'),
               ),
-              
+              SizedBox(height: 25),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(900, 60),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    side: BorderSide(color: Colors.black, width: 1),
+                  ),
+                  foregroundColor: Colors.black,
+                ),
+                onPressed: () {
+                  namaCustController.clear();
+                  emailCustController.clear();
+                  noHpCustController.clear();
+                  alamatController.clear();
+                  provinsiController.clear();
+                  kodePosController.clear();
+                },
+                child: Text('Reset'),
+              ),
             ],
           ),
         ),
